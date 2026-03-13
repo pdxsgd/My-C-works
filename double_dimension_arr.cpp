@@ -1,5 +1,11 @@
 #include <iostream>
 using namespace std;
+
+
+void speak(){
+    cout << "Hello world" << endl;
+}
+
 int main(){
     int arr[2][3] = 
     {
