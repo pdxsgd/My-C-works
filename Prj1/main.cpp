@@ -131,6 +131,96 @@ void deletePerson(addressBooks * abs) {
     }
 }
 
+
+//查找联系人
+void findPerson(addressBooks * abs) {
+    string name;
+    cout << "请输入您要查找的联系人的姓名：" << endl;
+    cin >> name;
+    if (isExsit(abs,name)!=-1) {
+        int res = isExsit(abs,name);
+        cout << "姓名：" << abs->personArray[res].m_Name << "\t";
+        cout << "性别：" << (abs->personArray[res].m_Sex==1 ? "男" : "女") << "\t";
+        cout << "年龄：" << abs->personArray[res].m_Age << "\t";
+        cout << "电话：" << abs->personArray[res].m_Phone << "\t";
+        cout << "住址：" << abs->personArray[res].m_Address << endl;
+        system("pause");
+    }
+    else {
+        cout << "查无此人" << endl;
+        system("pause");
+    }
+}
+
+//修改联系人
+void modifyPerson(addressBooks * abs) {
+    cout << "请输入要修改联系人的姓名：" << endl;
+    string name;
+    cin >> name;
+    int res = isExsit(abs,name);
+    if (res!=-1) {
+        //修改姓名
+        cout << "请输入新姓名：" << endl;
+        string name;
+        cin >> name;
+        abs->personArray[res].m_Name=name;
+        //修改性别
+        cout << "请输入新性别，1代表男，2代表女：" << endl;
+        while (true) {
+            int sex;
+            cin >> sex;
+            if (sex==1 || sex==2) {
+                abs->personArray[res].m_Sex=sex;
+                break;
+            }
+            else cout << "请重新输入性别：" << endl;
+        }
+        //修改年龄
+        cout << "请输入新年龄：" << endl;
+        int age;
+        cin >> age;
+        abs->personArray[res].m_Age=age;
+        //修改号码
+        cout << "请输入新号码：" << endl;
+        string phoneNum;
+        cin >> phoneNum;
+        abs->personArray[res].m_Phone=phoneNum;
+        //修改地址
+        cout << "请输入新地址：" << endl;
+        string address;
+        cin >> address;
+        abs->personArray[res].m_Address=address;
+
+        cout << "修改完成！" << endl;
+        system("pause");
+    }
+    else {
+        cout << "查无此人" << endl;
+        system("pause");
+    }
+}
+
+void cleanPerson(addressBooks * abs) {
+    cout << "你确定要清空所有联系人吗？该操作不可撤销！" << endl;
+    cout << "输入1以继续，输入2退出" << endl;
+    while (true) {
+        int choice;
+        cin >> choice;
+        if (choice==1) {
+            abs->m_size=0;
+            cout << "已清除全部联系人！" << endl;
+            break;
+        }
+        else if (choice==2) {
+            break;
+        }
+        else {
+            cout << "数字越界，重新输入：" << endl;
+        }
+    }
+}
+
+
 int main() {
     //设置控制台编码方式
     SetConsoleOutputCP(65001);
@@ -155,10 +245,13 @@ int main() {
                 deletePerson(&abs);
                 break;
             case 4:     //查找联系人
+                findPerson(&abs);
                 break;
             case 5:     //修改联系人
+                modifyPerson(&abs);
                 break;
             case 6:     //清空联系人
+                cleanPerson(&abs);
                 break;
             case 0:     //退出通讯录
                 cout << "欢迎下次使用！" << endl;
