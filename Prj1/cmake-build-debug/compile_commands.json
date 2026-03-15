@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/PDX/coding/CLionProjects/Prj1/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -g -std=gnu++20 -fdiagnostics-color=always -fmodules-ts -fmodule-mapper=CMakeFiles\\Prj1.dir\\main.cpp.obj.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles\\Prj1.dir\\main.cpp.obj -c D:\\PDX\\coding\\CLionProjects\\Prj1\\main.cpp",
+  "file": "D:/PDX/coding/CLionProjects/Prj1/main.cpp",
+  "output": "D:/PDX/coding/CLionProjects/Prj1/cmake-build-debug/CMakeFiles/Prj1.dir/main.cpp.obj"
+}
+]

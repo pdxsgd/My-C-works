@@ -1,0 +1,3 @@
+D:/PDX/coding/CLionProjects/Prj1/cmake-build-debug/CMakeFiles/Prj1.dir
+D:/PDX/coding/CLionProjects/Prj1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/PDX/coding/CLionProjects/Prj1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
